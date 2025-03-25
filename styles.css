@@ -1,0 +1,120 @@
+.introduction {
+    display: flex;  /* This ensures the items inside this div will be arranged horizontally */
+    align-items: center;  /* Aligns items vertically centered */
+    gap: 20px;  /* Optional: Adds some space between the image and the text */
+    align-self: center;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.michelle img {
+    width: 410px;
+    height: 400px;
+    object-fit: cover;  /* Optional: Ensures the image is nicely cropped and doesn't stretch */
+    transition: opacity 0.3s ease;
+}
+
+.michelle:hover {
+    content: url("https://i.ibb.co/DPP88f1h/michellez.png");
+    width: 410px;
+    height: 400px;
+}
+
+.intro-text {
+    max-width: 500px;  /* Optional: Limits the width of the text area for better readability */
+}
+
+.banner {
+    background-image: url("https://theburlingameb.org/wp-content/uploads/2023/01/crying-in-h-mart-cover-753x500-1.png");
+    background-color: red;
+    text-align: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 20px;
+    
+}
+
+.click-around {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.click-around div {
+    position: relative;
+    cursor: pointer;
+}
+
+
+h2 {
+    font-family: "Prata", cursive;
+    font-size: 40px;
+    align-self: center;
+}
+
+p {
+    font-family: "Quicksand", sans-serif;
+    font-size: large;
+}
+
+.introduction {
+    background-color: white;
+}
+
+.click-around {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.danmuji, .tteokbokki, .chamoe, .cream-soup, .soondubu-jiggae, .ssam-galbi {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 15%;
+}
+
+.logo img {
+    display: flex;
+    align-items: center;
+}
+
+.buttons {
+    display: flex; /* Ensures items are in a row */
+    justify-content: center; /* Centers everything horizontally */
+    gap: 20px; /* Space between each button-image pair */
+    margin-top: 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column; /* Stacks image above button */
+    align-items: center; /* Centers content */
+    text-align: center;
+}
+
+.button-container img {
+    width: 100px; /* Adjust size */
+    height: auto;
+    display: block;
+    margin-bottom: 10px; /* Space between image and button */
+}
+
+.button-container button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #ff5959; /* Adjust button color */
+    color: white;
+    border-radius: 5px;
+}
+
+p {
+    margin-left: 10%;
+    margin-right: 10%;
+}

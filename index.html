@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Crying in H Mart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        .click-around {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .click-around div {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .info-box {
+            position: absolute;
+            top: 10px;  /* Adjust to control where the text appears on the image */
+            left: 10px; /* Adjust to control horizontal placement */
+            background-color: rgba(255, 255, 255, 0.8);
+            color: rgb(0, 0, 0);
+            padding: 8px;
+            border-radius: 5px;
+            display: none;
+            pointer-events: none;
+            font-size: 14px;
+            max-width: 200px;
+            z-index: 1000; /* Ensure the info box appears on top of other elements */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    <br><br><br><br><br><br>
+
+    <div class="introduction">
+        <div class="michelle">
+            <img class="hover-image" src="https://i.ibb.co/HTyQkSb6/mzauner.png" alt="Image" />
+        </div>
+        <div class="intro-text">
+            <h2>About the Author: <br> Michelle Zauner</h2>
+            <p>
+                Michelle Zauner is an American musician, singer, songwriter, and author. She is the lead vocalist of the band Japanese Breakfast, and the author of a best-selling book: <i>Crying in H Mart</i>. 
+                <br><br>
+                She was raised in Eugene, Oregon, and she describes her childhood with her family in Oregon in her memoir. The memoir, published in 2021, explores her Asian-American identity in relation to her struggles with grief, and has since gained many awards and praise.
+            </p>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="buttons">
+        <div class="button-container">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/023/450/166/small_2x/brown-paper-bag-on-transparent-background-created-with-generative-ai-png.png" alt="Image Description" style="width: 200px; height: auto;">
+            <button onclick="location.href='#click-around'">Go to the Market</button>
+        </div>    
+        <div class="button-container">
+            <img src="book.png" alt="Image Description" style="width: 170px; height: auto;">
+            <button onclick="location.href='#quotes'">Go to Quotes</button>
+        </div>  
+        <div class="button-container">
+            <img src="https://mingwuphotos.wordpress.com/wp-content/uploads/2010/08/polaroid-guitar.jpg" alt="Image Description" style="width: 200px; height: auto;">
+            <button onclick="window.location.href='https://soybeanfein.github.io/crying_in_hmart/'">Go to Photo Gallery</button>
+        </div>  
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+
+    <h2 style="text-align: center;">H Mart and Sunrise Market</h2>
+    <p style="text-align: center;">Michelle often went to H Mart and Sunrise Market with her mother to go grocery shopping together. She describes shopping with her mom as one of the times they could bond together, and it made Michelle feel connected to her Korean culture. After her mother passed away, she had to learn how to navigate these markets, that were so familiar to her mother, by herself. Below, are ingredients she has seen and bought, and recipes she has made, in the book.</p>
+    <br><br>
+    <div class="logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCSGSH0xuIITG-3HIQqaZ0rd7gkwJO3OIbDA&s" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyPnulxj1ocFR4-ikEQjeaqDPA5yCeh7hmzw&s" alt="">
+    </div>
+
+    <div class="click-around" id="click-around">
+        <div class="chamoe">
+            <img src="IMG_1447.PNG" alt="Chamoe" style="width: 400px; height: auto;" data-info="Chamoe is a Korean melon with a sweet, crisp texture!">
+            <div class="info-box"></div>
+        </div>
+
+        <div class="danmuji">
+            <img src="IMG_1446.PNG" alt="Danmuji" style="width: 420px; height: auto;" data-info="Danmuji is Korean yellow pickled radish, often used in kimbap.">
+            <div class="info-box"></div>
+        </div>
+
+        <div class="cream-soup">
+            <img src="IMG_1450.PNG" alt="Cream Soup" style="width: 400px; height: auto;" data-info="This creamy soup was a childhood favorite of Michelle Zauner.">
+            <div class="info-box"></div>
+        </div>
+
+        <div class="soondubu-jiggae">
+            <img src="IMG_1448.PNG" alt="Soondubu Jjigae" style="width: 400px; height: auto;" data-info="A spicy Korean soft tofu stew, often enjoyed with rice.">
+            <div class="info-box"></div>
+        </div>
+
+        <div class="ssam-galbi">
+            <img src="IMG_1449.PNG" alt="Ssam Galbi" style="width: 400px; height: auto;" data-info="Grilled marinated short ribs, wrapped in lettuce with sauce.">
+            <div class="info-box"></div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="quotes" id="quotes">
+        <h2 style="text-align: center;">My favorite quotes from the book!</h2>
+        <p>
+            “Hers was tougher than tough love. It was brutal, industrial-strength. A sinewy love that never gave way to an inch of weakness. It was a love that saw what was best for you ten steps ahead, and didn't care if it hurt like hell in the meantime. When I got hurt, she felt it so deeply, it was as though it were her own affliction. She was guilty only of caring too much. I realize this now, only in retrospect. No one in this world would ever love me as much as my mother, and she would never let me forget it.”
+        </p>
+        <br><br>
+        <p>
+            “’I had an abortion after you because you were such a terrible child!’ …I was just shocked she had witheld something so monumental. I envied and feared my mothers ability to keep matters private. A rare talent for keeping secrets, even from us. She did not need anyone. She could surprise you with how little she needed you. All those years she instructed me to save 10 percent of myself like she did, I never knew it meant she had also been keeping a part of herself from me too.” (66)
+        </p>
+        <br><br>
+        <p>
+            “This coud be my chance, I thought, to make ammends for everything. For all the burdens I’d imposed as a hyperactive child, for all the vitriol I’d spewed as a tortured teen… I would radiate joy and positivity and it would cure her. I would wear whatever she wanted, complete every chore without protest, I would learn to cook for her—all the things she loved to eat, and I would singlehandedly keep her from withering away. I would repay her fora ll the debts Id accrued. I would be everything she ever needed. I would make her sorry for ever not wanting me to be there. I would be the perfect daughter.” (67)
+        </p>
+        <br><br>
+        <p>
+            “I wanted to cry with her, at this image I too did not recognize, this giant physical manifestation of evil that had entered our lives. But instead I felt my body stiffen, my heart harden, my feelings freeze over. An internal voice commanded ‘Do not break down. If you cry, it’s acknowleding danger. If you cry, she will not stop.’” (91)
+        </p>
+        <br><br>
+        <p>
+            “There was no one in the world that was ever as critical or could make me feel as hideous as my mother, but there was no one, not even Peter, who ever made me feel as beautiful. Deep down I always believed her. That no one would tell me the truth if my hair looked sloppy or if my makeup was overdone.” (141)
+        </p>
+        <br><br>
+    </div>
+    <script>
+        document.querySelectorAll(".click-around > div").forEach(container => { // Select direct div children
+        const image = container.querySelector("img");
+        const infoBox = container.querySelector(".info-box");
+
+        // Add event listener to the image inside the container
+        image.addEventListener("click", (event) => {
+            // Get unique text from the data-info attribute
+            const infoText = image.getAttribute("data-info");
+            infoBox.textContent = infoText;
+
+            // Position the info box near the click location
+            const imgRect = image.getBoundingClientRect();
+            infoBox.style.left = (event.clientX - imgRect.left + 10) + "px"; // Add some offset
+            infoBox.style.top = (event.clientY - imgRect.top + 10) + "px";  // Add some offset
+            infoBox.style.display = "block"; // Show the info box
+        });
+
+        // Hide info box when clicking outside
+        document.addEventListener("click", (event) => {
+            if (!container.contains(event.target)) {
+                infoBox.style.display = "none"; // Hide the info box when clicking outside
+            }
+        });
+    });
+    </script>
+</body>
+</html>
