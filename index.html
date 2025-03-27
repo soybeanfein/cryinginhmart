@@ -8,35 +8,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prata&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
     <style>
-        .click-around {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+        .image-container {
+            position: relative;
+            display: inline-block;
         }
 
-        .click-around div {
-            position: relative;
+        /* Hidden tooltip box */
+        .tooltip {
+            position: absolute;
+            background-color: white;
+            border: 1px solid black;
+            padding: 8px;
+            font-size: 18px;
+            display: none; /* Initially hidden */
+            white-space: nowrap;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 300px; /* Limits width so text wraps */
+            white-space: normal; /* Allows text to break into lines */
+            word-wrap: break-word;
+        }
+
+        /* Grid layout for images */
+        .click-around {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+            grid-template-rows: repeat(2, auto); /* 2 rows */
+            gap: none;
+            padding-bottom: 500px;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
             cursor: pointer;
         }
 
-        .info-box {
-            position: absolute;
-            top: 10px;  /* Adjust to control where the text appears on the image */
-            left: 10px; /* Adjust to control horizontal placement */
-            background-color: rgba(255, 255, 255, 0.8);
-            color: rgb(0, 0, 0);
-            padding: 8px;
-            border-radius: 5px;
-            display: none;
-            pointer-events: none;
-            font-size: 14px;
-            max-width: 200px;
-            z-index: 1000; /* Ensure the info box appears on top of other elements */
-        }
     </style>
 </head>
 <body>
+    <div class="header">A visual presentation by Sophia Yang</div>
 
     <div class="banner">
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -45,10 +58,10 @@
 
     <div class="introduction">
         <div class="michelle">
-            <img class="hover-image" src="https://i.ibb.co/HTyQkSb6/mzauner.png" alt="Image" />
+            <img src="https://static01.nyt.com/images/2022/06/12/magazine/12mag-talk/12mag-talk-jumbo.jpg" alt="Image" />
         </div>
         <div class="intro-text">
-            <h2>About the Author: <br> Michelle Zauner</h2>
+            <h2 style="margin-left: 10%;">About the Author: <br> Michelle Zauner</h2>
             <p>
                 Michelle Zauner is an American musician, singer, songwriter, and author. She is the lead vocalist of the band Japanese Breakfast, and the author of a best-selling book: <i>Crying in H Mart</i>. 
                 <br><br>
@@ -56,11 +69,10 @@
             </p>
         </div>
     </div>
-    <br><br><br><br><br><br><br><br>
     <div class="buttons">
         <div class="button-container">
             <img src="https://static.vecteezy.com/system/resources/thumbnails/023/450/166/small_2x/brown-paper-bag-on-transparent-background-created-with-generative-ai-png.png" alt="Image Description" style="width: 200px; height: auto;">
-            <button onclick="location.href='#click-around'">Go to the Market</button>
+            <button onclick="location.href='#market'">Go to the Market</button>
         </div>    
         <div class="button-container">
             <img src="book.png" alt="Image Description" style="width: 170px; height: auto;">
@@ -68,6 +80,7 @@
         </div>  
         <div class="button-container">
             <img src="https://mingwuphotos.wordpress.com/wp-content/uploads/2010/08/polaroid-guitar.jpg" alt="Image Description" style="width: 200px; height: auto;">
+            <br>
             <button onclick="window.location.href='https://soybeanfein.github.io/crying_in_hmart/'">Go to Photo Gallery</button>
         </div>  
     </div>
@@ -82,31 +95,43 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyPnulxj1ocFR4-ikEQjeaqDPA5yCeh7hmzw&s" alt="">
     </div>
 
-    <div class="click-around" id="click-around">
-        <div class="chamoe">
-            <img src="IMG_1447.PNG" alt="Chamoe" style="width: 400px; height: auto;" data-info="Chamoe is a Korean melon with a sweet, crisp texture!">
-            <div class="info-box"></div>
+    
+    <div class="click-around" id="market">
+        <div class="image-container">
+            <img src="IMG_1447.PNG" alt="Chamoe" style="width: 400px; height: auto;">
+            <div class="tooltip"> I fondle the produce and say the words aloud— <b>chamoe melon</b> , danmuji.</div>
         </div>
 
-        <div class="danmuji">
-            <img src="IMG_1446.PNG" alt="Danmuji" style="width: 420px; height: auto;" data-info="Danmuji is Korean yellow pickled radish, often used in kimbap.">
-            <div class="info-box"></div>
+        <div class="image-container">
+            <img src="IMG_1446.PNG" alt="Danmuji" style="width: 420px; height: auto;">
+            <div class="tooltip"><b>Danmuji</b> - Pickled daikon radish, often eaten as a sidedish with jjangmyeon. </div>
         </div>
 
-        <div class="cream-soup">
-            <img src="IMG_1450.PNG" alt="Cream Soup" style="width: 400px; height: auto;" data-info="This creamy soup was a childhood favorite of Michelle Zauner.">
-            <div class="info-box"></div>
+        <div class="image-container">
+            <img src="IMG_1450.PNG" alt="Cream Soup" style="width: 400px; height: auto;">
+            <div class="tooltip">The only thing she (mom) could come up with was Ottogi brand cream soup, an instant powder I could buy at the Asian grocery that was neutral and easy to digest. “Keu-reem seu-peu,” I whispered. <b>Cream soup</b>.</div>
         </div>
 
-        <div class="soondubu-jiggae">
-            <img src="IMG_1448.PNG" alt="Soondubu Jjigae" style="width: 400px; height: auto;" data-info="A spicy Korean soft tofu stew, often enjoyed with rice.">
-            <div class="info-box"></div>
+        <div class="image-container">
+            <img src="IMG_1448.PNG" alt="Soondubu Jjigae" style="width: 400px; height: auto;">
+            <div class="tooltip" style="width: 1000px;">Another is for traditional Korean <b>jjigaes</b>, bubbling soups served in traditional earthenware pots called ttukbaegis, which act as mini cauldrons to ensure that your soup is still bubbling a good ten minutes past arrival. <br><br> I racked my brain for something I could make them for breakfast and
+                landed on doenjang jjigae, the ultimate Korean comfort food. My mother
+                often served it alongside our Korean meals, a rich, hearty stew filled with
+                vegetables and tofu. I had never made the dish myself, but I knew its basic
+                components and what it should taste like. Still in bed, I turned onto my side
+                and googled how to make Korean fermented soybean soup.</div>
         </div>
 
-        <div class="ssam-galbi">
-            <img src="IMG_1449.PNG" alt="Ssam Galbi" style="width: 400px; height: auto;" data-info="Grilled marinated short ribs, wrapped in lettuce with sauce.">
-            <div class="info-box"></div>
+        <div class="image-container">
+            <img src="IMG_1449.PNG" alt="Ssam Galbi" style="width: 400px; height: auto;">
+            <div class="tooltip" style="width: 1000px;">Julia, the golden retriever we’d had since I was twelve, fell onto her back, paws up, submitting her giant stomach in a pose my mother always referred to as “breasts up!” while my mother grilled the <b>galbi</b> I would always associate with the taste of home. <br><br> She (LA Kim) went through the kitchen cabinets, filling garbage bags with the expired cans my mother had accumulated in the pantries, and volunteered to prepare the galbi, my favorite celebratory Korean dish, for our wedding. Once, when I was in college, my mother walked me through her recipe over the phone. She relayed the ingredients haphazardly, rattling off the brand of mulyeot, or sweet barley malt syrup, and describing the tin of sesame oil she had at home as I darted around H Mart, struggling to keep up. Back at home, I called again to have her walk me through the process, frustrated that her instructions were always so convoluted, even when it came to making rice.</div>
         </div>
+
+        <div class="image-container">
+            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/jajangmyeon-3d-icon-download-in-png-blend-fbx-gltf-file-formats--delicious-logo-black-bean-noodles-meal-korean-food-pack-drink-icons-6475941.png?f=webp" alt="Ssam Galbi" style="width: 350px; height: auto;">
+            <div class="tooltip">The food court is the perfect place to people-watch while sucking down salty, fatty <b>jjajangmyeon</b>. I think about my family who lived in Korea, before most of them died, and how Korean-Chinese was always the first thing we’d eat when my mom and I arrived in Seoul after a fourteen-hour flight from America. </div>
+        </div>
+        
     </div>
 
     <br><br>
@@ -118,7 +143,7 @@
         </p>
         <br><br>
         <p>
-            “’I had an abortion after you because you were such a terrible child!’ …I was just shocked she had witheld something so monumental. I envied and feared my mothers ability to keep matters private. A rare talent for keeping secrets, even from us. She did not need anyone. She could surprise you with how little she needed you. All those years she instructed me to save 10 percent of myself like she did, I never knew it meant she had also been keeping a part of herself from me too.” (66)
+            “I had an abortion after you because you were such a terrible child! …I was just shocked she had witheld something so monumental. I envied and feared my mothers ability to keep matters private. A rare talent for keeping secrets, even from us. She did not need anyone. She could surprise you with how little she needed you. All those years she instructed me to save 10 percent of myself like she did, I never knew it meant she had also been keeping a part of herself from me too.” (66)
         </p>
         <br><br>
         <p>
@@ -134,31 +159,7 @@
         </p>
         <br><br>
     </div>
-    <script>
-        document.querySelectorAll(".click-around > div").forEach(container => { // Select direct div children
-        const image = container.querySelector("img");
-        const infoBox = container.querySelector(".info-box");
+    <div class="footer">A visual presentation by Sophia Yang</div>
 
-        // Add event listener to the image inside the container
-        image.addEventListener("click", (event) => {
-            // Get unique text from the data-info attribute
-            const infoText = image.getAttribute("data-info");
-            infoBox.textContent = infoText;
-
-            // Position the info box near the click location
-            const imgRect = image.getBoundingClientRect();
-            infoBox.style.left = (event.clientX - imgRect.left + 10) + "px"; // Add some offset
-            infoBox.style.top = (event.clientY - imgRect.top + 10) + "px";  // Add some offset
-            infoBox.style.display = "block"; // Show the info box
-        });
-
-        // Hide info box when clicking outside
-        document.addEventListener("click", (event) => {
-            if (!container.contains(event.target)) {
-                infoBox.style.display = "none"; // Hide the info box when clicking outside
-            }
-        });
-    });
-    </script>
 </body>
 </html>
